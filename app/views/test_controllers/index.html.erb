@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<i class="fa fa-bolt fa-4x">Listing Test Controllers</i>
+<hr/>
+<i class="fa fa-spinner fa-spin"></i> Searching something good<br/>
+<hr/>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+	<table class="table">  
+    <% @test_controllers.each do |test_controller| %>
+      <tr>
+        <td><%= link_to 'Show', test_controller %></td>
+        <td><%= link_to 'Edit', edit_test_controller_path(test_controller) %></td>
+        <td><%= link_to 'Destroy', test_controller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+	</table>
+  </tbody>
+  <hr/>
+  <%= link_to 'New Test controller', new_test_controller_path, class:"btn btn-success" %><br/>
+  <hr/>
+  
+  <tfoot>
+	  <i class="fa fa-copyright"></i> Copyright by Bichon Inc.
+  </tfoot>
+</table>
+
+<br>
+
+
