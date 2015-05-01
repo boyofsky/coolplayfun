@@ -1,6 +1,7 @@
 class TestControllersController < ApplicationController
   before_action :set_test_controller, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  
   # GET /test_controllers
   # GET /test_controllers.json
   def index
@@ -69,6 +70,6 @@ class TestControllersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_controller_params
-      params[:test_controller]
+      params.require(:test_controller).permit(:name)
     end
 end
