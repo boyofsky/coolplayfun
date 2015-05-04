@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
          def admin?
+         	 self.authadmin == 'EveryFirstAdmin'
          end
 end
