@@ -17,16 +17,19 @@
       <tr>
 		<td><%= test_controller.name %></td>
         <td><%= link_to 'Show', test_controller %></td>
+<% if can? :update, test_controller %>
         <td><%= link_to 'Edit', edit_test_controller_path(test_controller) %></td>
+<% end %>
+<% if can? :destroy, test_controller %>
         <td><%= link_to 'Destroy', test_controller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>        
+
       </tr>
     <% end %>
 	</table>
   </tbody>
   <%= link_to 'New Test controller', new_test_controller_path, class:"btn btn-success" %><br/>
   <hr/>
-  
-<hr/>
 
   <% if current_user %>
       <%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
