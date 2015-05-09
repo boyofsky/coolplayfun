@@ -24,7 +24,7 @@ class TestControllersController < ApplicationController
 
   # POST /test_controllers
   # POST /test_controllers.json
-  def create
+  def create  
     @test_controller = TestController.new(test_controller_params)
 
     respond_to do |format|

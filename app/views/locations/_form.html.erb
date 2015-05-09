@@ -1,0 +1,6 @@
+<%= simple_form_for(@newlocation) do |f| %>
+	<%= f.input :name ,placeholder: 'location name' , label: false%>
+	<%= f.input :gps, placeholder: 'GPS' , label: false%>
+	
+	<%= f.button :submit %>
+<% end %>
