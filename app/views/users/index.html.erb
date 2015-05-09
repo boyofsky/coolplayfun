@@ -1,0 +1,16 @@
+<h1>This is User Index page</h1>
+
+<table class="table">
+	<% @allusers.each do |user|%>
+		<tr>
+			<td><%= user.username %></td>
+			<% if can? :delete , user%>
+			<td><%= link_to 'Delete', user_path(user), method: :delete %></td>
+			<% end %>
+		</tr>
+	<% end %>
+</table>
+
+<hr/>
+
+<%= link_to 'Create User', new_user_path, class:'btn btn-info' %>
