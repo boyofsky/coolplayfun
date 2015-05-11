@@ -1,11 +1,13 @@
 <h1>This is location index page</h1>
 <hr/>
 
+<p id="notice"><%= notice %></p>
 
 <table>
 	<table class="table">	
 		<% @alllocations.each do |location| %>
 		<tr>
+			<td class="col-sm-1"><%= location.id %></td>
 			<td class="col-sm-3"><%= location.name %></td>
 			<td class="col-sm-1"><%= link_to 'Show Location', location_path(location)%></td>
 			<td class="col-sm-1"><%= link_to 'Edit Location', edit_location_path(location)%></td>
