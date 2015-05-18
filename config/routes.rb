@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :test_controllers
   resources :locations
   resources :users
+  resources :events
   
   #root 'test_controllers#index'
   root 'locations#index'

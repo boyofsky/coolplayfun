@@ -21,9 +21,11 @@ class LocationsController < ApplicationController
     #return 
     
     @location = Location.new(location_params)
+    #redirect_to 'index'
+    #return
     respond_to do |format|
       if @location.save
-        format.html { render :index}
+        format.html { redirect_to @location}
         #format.json {}
       else
         format.html { render :new }

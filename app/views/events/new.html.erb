@@ -1,0 +1,7 @@
+<h1>This is new page</h1>
+<%= simple_form_for @event do |f| %>
+<%= f.input :title %>
+<%= f.association :location %>
+<%= f.input :event_date %>
+<%= f.submit %>
+<% end%>

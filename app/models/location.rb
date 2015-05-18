@@ -4,4 +4,5 @@ class Location < ActiveRecord::Base
      #validates :address, presence: true
      validates :name, :presence => { :message => "不能空白" }
      validates :address, :presence => { :message => "不能空白" }
+     has_many :events
 end
