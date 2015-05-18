@@ -1,8 +1,13 @@
 <%= simple_form_for(@location) do |f| %>
-	<%= f.input :name ,placeholder: 'location name' , label: false %>
-	<%= f.input :address, placeholder: 'address' , label: false %>
+	<%#= f.error_notification %>
+	
+	<%= f.input :name ,placeholder: 'location name'  , label: false , :required => true %>
+	<%#= f.input :name , :required => true %>
+	<%= f.input :address, placeholder: 'address'  , label: false , :required => true %>
 	<%= f.input :official_web, placeholder: '官方網站', label: false %>
 	<%= f.input :gps, placeholder: 'GPS' , label: false %>
 	
 	<%= f.button :submit %>
 <% end %>
+
+<hr/>

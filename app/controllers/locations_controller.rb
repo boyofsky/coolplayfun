@@ -3,6 +3,12 @@ class LocationsController < ApplicationController
   
   def index
     @alllocations = Location.all
+    
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @alllocations.to_xml}
+      format.json {render :json => @alllocations.to_json}
+    end
   end
   
   def new
@@ -14,9 +20,17 @@ class LocationsController < ApplicationController
     #render text: params
     #return 
     
-    @newlocation = Location.new(location_params)
-    @newlocation.save
-    redirect_to action: "index"
+    @location = Location.new(location_params)
+    respond_to do |format|
+      if @location.save
+        format.html { render :index}
+        #format.json {}
+      else
+        format.html { render :new }
+        #format.json { render json: @location.errors, status: :unprocessable_entity }
+        #format.json { render json: @location.errors}
+      end
+    end
   end
   
   def edit
@@ -33,6 +47,8 @@ class LocationsController < ApplicationController
     #render text: params
     #return 
     @location = Location.find(params[:id])
+    
+
   end
     
   def destroy

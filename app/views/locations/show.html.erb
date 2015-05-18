@@ -6,3 +6,6 @@
 	<tr>Address: <%= @location.address %></tr><br/>
 	<tr>Official_web<%= @location.official_web %></tr><br/>
 </table>
+
+<%= link_to 'Back to Index', locations_path, class:'btn btn-info' %>
+<%= link_to 'Edit Location', edit_location_path(@location), class:'btn btn-success' %>
